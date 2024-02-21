@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block extrahead %}
+  <!-- STEP :
+  1 : load the JS librairy
+  2 : required public key and the JS parameters as url sucess -->
+      <script type="text/javascript"
+              src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
+              kr-public-key="{{data.public_key}}"
+              kr-post-url-success="resultado">
+      </script>
+
+      <!-- 3 : theme classic should be loaded in the HEAD section   -->
+      <link rel="stylesheet" href="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.css">
+      <script type="text/javascript" src="https://static.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js">
+      </script>
+{% endblock %}
+{% block extrastyles %}
+{% endblock %}
+
+{% block body %}
+    <div class="col mx-auto d-flex flex-wrap align-items-center me-5 card p-4">
+            <h3 class="mb-1 text-center">Formulario pop-in</h3>
+            <hr class="w-100 mb-3 " />
+            <div class="kr-embedded" kr-popin kr-form-token="{{data.formToken}}"></div>
+    </div>
+{% endblock %}
+
+{% block extrajs %}
+    <script>
+    </script>
+{% endblock %}

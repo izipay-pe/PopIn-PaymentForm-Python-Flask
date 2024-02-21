@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block extrahead %}
+{% endblock %}
+{% block extrastyles %}
+{% endblock %}
+
+{% block body %}
+<section class="container" >
+    <div class="row">
+      <div class="col mx-auto">
+        <h1 style="color: white">Resultado de pago</h1>
+
+        {% if data.response == 'PAID' %}
+          <p>Estado:  {{ data.response }}</p>
+          <p>Monto: S/.  {{ data.orderTotalAmount }}</p>
+          <p>ID Orden:  {{ data.orderId }}</p>
+
+        {% else %}
+          <p>Estado:  {{ data.response }}</p>
+        {% endif %}
+          <form action="/" method="get">
+            <button class="btn btn-izi">
+                Volver a probar
+            </button>
+          </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extrajs %}
+    <script>
+    </script>
+{% endblock %}

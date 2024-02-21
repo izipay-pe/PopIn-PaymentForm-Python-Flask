@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block extrahead %}
+{% endblock %}
+{% block extrastyles %}
+{% endblock %}
+
+{% block body %}
+<section class="container" >
+    <div class="row">
+      <div class="col mx-auto">
+        <h1 style="color: white">Error:</h1>
+          <pre>
+              {{ data.serialized_data | safe }}
+          </pre>
+          <form action="/" method="get">
+            <button class="btn btn-izi">
+                Volver a probar
+            </button>
+          </form>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block extrajs %}
+    <script>
+    </script>
+{% endblock %}
