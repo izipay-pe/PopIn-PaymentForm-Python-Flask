@@ -21,7 +21,7 @@ Este manual está diseñado para ayudarte a comprender el flujo de la integraci�
 ## 2. Requisitos previos
 * Comprender el flujo de comunicación de la pasarela. [Información Aquí](https://secure.micuentaweb.pe/doc/es-PE/rest/V4.0/javascript/guide/start.html)
 * Extraer credenciales del Back Office Vendedor. [Guía Aquí](https://github.com/izipay-pe/obtener-credenciales-de-conexion)
-* Para este proyecto utilizamos **Python 3.10**
+* Para este proyecto utilizamos **Python 3.12**
 * Para este proyecto utilizamos la herramienta Visual Studio Code.
 > [!NOTE]
 > Tener en cuenta que, para que el desarrollo de tu proyecto, eres libre de emplear tus herramientas preferidas.
@@ -64,35 +64,37 @@ Antes de ejecutar el proyecto, se creará el virtual environment (venv):
 <p align="center">
   <img src="https://i.postimg.cc/pr2Y4wyb/Requirements.png" alt="SelectRequirements" width="600"/>
 </p>
-6. Una vez instaladas las dependencias, verificar el venv creado mediante `ctrl` + `shift` + `p`, buscar `Python: Select Interpreter` y seleccionar venv
-<p align="center">
-  <img src="https://i.postimg.cc/TY3J9vZn/Select-Env.png" alt="SelectInterpreter" width="600"/>
-</p>
 
 ### Ejecutar proyecto
-Para ejecutar el proyecto a través de Visual Studio, abrir una nueva terminar y activar el venv creado:
+1. Para ejecutar el proyecto a través de Visual Studio, ingresar a la sección "Ejecutar" y seleccionar `Run and Debug`
+<p align="center">
+  <img src="https://i.postimg.cc/8sQdxm4D/Ejecutar.png" alt="SelectInterpreter" width="400"/>
+</p>
+2. Seleccionar el debugger: `Python Debugger`
+<p align="center">
+  <img src="https://i.postimg.cc/yxSXfbFv/Debugger.png" alt="SelectRequirements" width="600"/>
+</p>
+3. Seleccionar la configuración del debugger `Flask`
+<p align="center">
+  <img src="https://i.postimg.cc/wvrQQps1/Debug-conf.png" alt="SelectRequirements" width="600"/>
+</p>
+4. El proyecto se ha ejecutado y es accesible a través de:
 
-  ```sh
-  .venv\scripts\activate 
-  ```
+ ```sh
+  http://127.0.0.1:5000
+ ```
+
 > [!CAUTION]
 > En caso de error ejecutar PowerShell como administrador y ejecutar el comando  `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
-Realizar las migraciones:
- ```sh
-  python manage.py migrate
-  ```
-Ejecutar el proyecto:
- ```sh
-  python manage.py runserver
-  ```
+
 ## 4. Datos de conexión 
 
 **Nota**: Reemplace **[CHANGE_ME]** con sus credenciales de `API REST` extraídas desde el Back Office Vendedor, ver [Requisitos Previos](#Requisitos_Previos).
 
-* Editar en `Keys/keys.py` :
+* Editar en `key.py` :
 <p align="center">
-  <img src="https://i.postimg.cc/k4NvjJJv/Credentials.pngg" alt="Credentials"/>
+  <img src="https://i.postimg.cc/667kJ6c1/keys.png" alt="Credentials"/>
 </p>
 
 ## 5. Transacción de prueba
